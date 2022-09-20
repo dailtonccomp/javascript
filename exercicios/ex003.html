@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de dados - Number e String</title>
+    <style>
+        body {
+            background-color: rgb(105, 105, 176);
+            color: white;
+            font: normal 20pt Arial;
+        }
+
+        h1 {
+            color: rgb(255,212,22);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, mundo!!!</h1>
+    <p>Já me livrei da maudição!</p>
+    <script>             
+        var n1 = Number.parseInt(window.prompt('Digite um número: ')); // tranformando a string digitada no prompt de comando da janela em um número inteiro
+        var n2 = Number.parseInt(window.prompt('Digite outro número: '));
+        var s = n1 + n2;
+        window.alert(`A soma entre ${n1} e ${n2}  é igual a ${s}`);
+
+        var n3 = Number(window.prompt('Informe primeiro número ')); //somente com o Number para o javascript escolher o tipo de número;
+        var n4 = Number(window.prompt('Iforme o segundo número '));
+        var s1 = n3 + n4;
+        window.alert(String(s1));
+        window.alert(typeof(String(s1)));
+    </script>
+</body>
+</html>
