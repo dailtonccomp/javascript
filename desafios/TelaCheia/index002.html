@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela cheia</title>
+    <style>
+        body {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: red;">Teste</h1>
+    <input type="button" value="clique para ativar tela cheia" onclick="requestFullScreen()">
+
+    <script>
+        function requestFullScreen() {
+
+        var el = document.body;
+
+        // Supports most browsers and their versions.
+        var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen 
+        || el.mozRequestFullScreen || el.msRequestFullScreen;
+
+        if (requestMethod) {
+
+        // Native full screen.
+        requestMethod.call(el);
+
+        } else if (typeof window.ActiveXObject !== "undefined") {
+
+        // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+        }
+        }
+    </script>
+</body>
+</html>
