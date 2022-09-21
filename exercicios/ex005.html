@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p name="msg">Aqui vai o resultado</p>
+    <p>Aprendendo a usa o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <div id="msg1">Outra div para exemplifica</div>
+    <script>
+        // window.document.write('Olá, Mundo!')
+        // window.document.write('<br>')
+        // window.document.write(window.document.charset)
+        // window.document.write('<br>')
+        // window.document.write(window.navigator.appName)
+        // window.document.write('<br>')
+        // window.document.write(window.document.URL)
+        /*
+            colocando [0] depois de getElementsByTagName eu consigo informar quais das tag p eu quero selecionar, nesse caso vai ser o primeiro da palavra "Aqui vai o resultado"
+        */
+        var p1 = window.document.getElementsByTagName('p')[1] //Por nome
+        /*
+            o innerText é usado para mostra o que p1 selecionou na linha acima mas ele não consegue levar as informações de outras tags que tenha na frase, tipo o strong. para isso utilizamos o innerHTML
+        */
+        window.document.write('Esta escrito assim usando innerText: ' + p1.innerText)
+        window.document.write('<br>')
+        window.document.write('Esta escrito assim usando innerHTML: ' + p1.innerHTML)
+        /*
+            No formato abaixo, consigo alterar a cor da tag p segundo o caminho da árvore
+        */
+        p1.style.color = 'blue'
+        p1.style.backgroundColor = 'aquamarine'
+        p1.style.blockSize = '30px'
+        p1.style.padding = '10px'
+
+        var d = window.document.getElementById('msg') //por Id
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        //outra forma de apresentar atráves do comando completo
+        window.document.getElementById('msg').innerText = 'OLá!'
+
+        var n = window.document.getElementsByName('msg')[0] //por name
+        n.style.color = 'yellow'
+        n.innerText = 'Mudou'
+
+        var a = window.document.querySelector('div#msg1')
+        a.style.background = 'red'
+        a.style.padding = '30px'
+        a.style.color = 'black'
+        a.innerText = 'Texto alterado com sucesso'
+    </script>
+</body>
+</html>
