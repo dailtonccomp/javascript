@@ -3,11 +3,11 @@ function contar(){
     var fim = document.getElementById('fim')
     var passo = document.getElementById('passo')
     var res = document.querySelector('div#res')
-    // let calculo = []
+    // let calculo = []    
+    //res.innerHTML = `inicio: ${ini.value}, fim: ${fim.value}, passo: ${passo.value} e calc = ${calc}`
     var calc = ini.value
-    while(calc <= fim) {              
-        console.log(`${calc}`)
-        calc = calc + passo
-        res.innerHTML = 'calc'
+    while(calc <= fim.value) {
+        res.innerHTML = calc
+        calc = calc + passo.value        
     }
 }
