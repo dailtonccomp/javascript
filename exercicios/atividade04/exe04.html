@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de exercício</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Título</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
-            testando...
+            <label for="num">Número</label>
+            <input type="number" name="num" id="num">
+            <input type="button" value="Gerar Tabuada" onclick="tabuada()">
         </div>
-        <div>
-            <img src="img/manha_original.jpg" alt="imagem da manhã">
+        <div id="res">            
+            <select name="multiplica" id="seltab" size="10"></select>
+            <select name="somar" id="selsomar" size="10"></select>
+            <select name="divisao" id="seldiv" size="10"></select>
+            <select name="diminuicao" id="seldim" size="10"></select>
         </div>
     </section>
     <footer>
