@@ -13,13 +13,15 @@
     </header>
     <section>
         <div>
+            <p>Informe 5 números</p>
             <p>
                 <label for="inum">Número</label>
                 <input type="number" name="num" id="inum">
-                <input type="button" value="+" onclick="guardar()">
+                <input type="button" value="+" onclick="guardar(incremento())">
             </p>
             <p>
                 <input type="button" value="Quadrado" onclick="quadrado()">
+                <input type="button" value="Limpar" onclick="limpar()">
             </p>
         </div>
         <div id="res">
