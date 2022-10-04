@@ -1,5 +1,8 @@
 const n = []
+let maior = 0
+let menor = 0
 let res = document.getElementById('res')
+
 function guardar() {
     let num = document.getElementById('inum')
     if(num.value.length == 0) {
@@ -13,9 +16,18 @@ function guardar() {
 function limpar() {
     n.splice(0, n.length); //limpando array
     res.innerHTML = ''
+    maior = 0
+    menor = 0
 }
 
-function maior() {
-    let maior = Math.max(...n)
-    res.innerHTML += `O maior número entre  ${n} é o ${maior}.`
+function maiorMenor() {
+    for(let i = 0; i < n.length; i++) {
+        if(n[i] >= 18) {
+            maior++
+        } else {
+            menor++
+        }
+    }
+    res.innerHTML += `Quantidade de maiores de idade: ${maior}. <br>`
+    res.innerHTML += `Quantidade de menores de idade: ${menor}.`
 }
