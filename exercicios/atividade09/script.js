@@ -112,7 +112,6 @@ class Pessoa {
                 indice = i;
             }
             res.innerHTML += `${i+1}º- Altura: ${parseFloat(this.arrayPessoas[i].alturaPessoa)}, Sexo: ${this.arrayPessoas[i].sexoPessoa} <br>`;
-
         }
 
         res.innerHTML += `<br>Quantidade de sexo masculino: ${masc}.<br>`;
