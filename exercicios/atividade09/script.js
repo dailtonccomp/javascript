@@ -52,8 +52,10 @@ class Pessoa {
 
         if(this.validaCampos(pessoa)) {
             this.adicionar(pessoa);
+            //pessoa.alturaPessoa = '';
+            //pessoa.sexoPessoa = '';
         }
-         console.log(this.arrayPessoas);
+        // console.log(this.arrayPessoas);        
     }
 
     adicionar(pessoa) {
@@ -88,6 +90,40 @@ class Pessoa {
         }
 
         return true;
+    }
+
+    resultado() {
+        let res = document.getElementById('res');
+        res.innerHTML = '';
+
+        let masc = 0;
+        let fem = 0;
+        let maiorAltura = 0;
+        let indice;
+
+        for(let i = 0; i < this.arrayPessoas.length; i++) {
+            if(this.arrayPessoas[i].sexoPessoa == "M") {
+                masc++;
+            } else {
+                fem++;
+            }
+            if(parseFloat(this.arrayPessoas[i].alturaPessoa) >= maiorAltura) {
+                maiorAltura = parseFloat(this.arrayPessoas[i].alturaPessoa);
+                indice = i;
+            }
+            res.innerHTML += `${i+1}º- Altura: ${parseFloat(this.arrayPessoas[i].alturaPessoa)}, Sexo: ${this.arrayPessoas[i].sexoPessoa} <br>`;
+
+        }
+
+        res.innerHTML += `<br>Quantidade de sexo masculino: ${masc}.<br>`;
+        res.innerHTML += `Quantidade de sexo feminino: ${fem}.<br>`;
+        res.innerText += `A maior altura é: ${maiorAltura} do sexo ${this.arrayPessoas[indice].sexoPessoa}.`;
+        
+    }
+
+    limpar() {
+        res.innerHTML = '';
+        this.arrayPessoas.splice(0, this.arrayPessoas.length);
     }
 }
 
